@@ -65,4 +65,19 @@ codes, instead of writing the strings and integers ourselves.
 Specifically, we can use the constant http.MethodPost instead of the string "POST", and the constant
 http.StatusMethodNotAllowed instead of the integer 405. Like so: 
 
+# URL query strings 
+
+While we're on the subject of routing, let's update the snippetView handler so that it accepts an id
+query string parameter from the user like so: 
+
+|Mehtod|Pattern|Handler|Action|
+|:---|:--|:--|:--|
+|ANY|/|home|Display the home page|
+|ANY|/snippet/view?id=1|snippetView|Display a specific snippet|
+|POST|/snippet/create|snippetCreate|Create a new snippet|
+
+Later we'll use this id parameter to select a specific snippet from a database and show it to the user.
+But for now, we'll just read the value of the id parameter and interpolate it with a placeholder
+response. 
+
 
