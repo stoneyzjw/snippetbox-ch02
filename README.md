@@ -57,3 +57,12 @@ above) then it's a good opportunity to use the **http.Error()** shortcut. This i
 function which take a given message and status code, then calls the **w.WriteHeader()** and
 **w.Write()** methods behind-the-scenes for us. 
 
+## The net/http constants 
+
+One final tweak we can make is to use constants from the net/http package for HTTP methods and status
+codes, instead of writing the strings and integers ourselves. 
+
+Specifically, we can use the constant http.MethodPost instead of the string "POST", and the constant
+http.StatusMethodNotAllowed instead of the integer 405. Like so: 
+
+

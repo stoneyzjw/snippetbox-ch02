@@ -30,8 +30,8 @@ func snippetCreate(w http.ResponseWriter, r *http.Request) {
          * response body. We then return from the function so that the 
          * subsequent code is not executed 
          */ 
-        w.Header().Set("Allow", "POST")
-        http.Error(w, "Method Not Allowed\n", 405)
+        w.Header().Set("Allow", http.MethodPost)
+        http.Error(w, "Method Not Allowed\n", http.StatusMethodNotAllowed)
         // w.WriteHeader(405)
         // w.Write([]byte("Method Not Allowed\n"))
         return
