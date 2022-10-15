@@ -22,3 +22,15 @@ begin with the three absolute essentials:
    external third-party server like Nginx or Apache. 
 
 Let's put these components together in the main.go file to make a working application. 
+
+## Routing requests 
+
+Having a web application which just one route isn't very exciting.. or useful! Let's add a couple more
+routes so that the application starts to shape up like this: 
+
+|URL Pattern |Handler|Action 
+|:----|:----|:-----|
+|/ | home | Display the home page |
+|/snippet/view| snippetView| Display a specific snippet|
+|/snippet/create|snippetCreate|Create a new snippet|
+
