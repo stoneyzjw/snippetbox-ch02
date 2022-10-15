@@ -34,3 +34,19 @@ routes so that the application starts to shape up like this:
 |/snippet/view| snippetView| Display a specific snippet|
 |/snippet/create|snippetCreate|Create a new snippet|
 
+## Customizing HTTP headers 
+
+Let's now update our application so that the /snippet/create route only responds to HTTP requests which
+use the POST method, like so
+
+|Method|URL Pattern |Handler|Action 
+|:----|:----|:----|:-----|
+|ANY|/ | home | Display the home page |
+|ANY|/snippet/view| snippetView| Display a specific snippet|
+|POST|/snippet/create|snippetCreate|Create a new snippet|
+
+Making this change is important because - later in our application build requests to the
+/snippet/create route will result in a new snippet beging created in a database. Creating a new snippet
+in a database is a non-idempotent action that changes the state of our server, so we should follow HTTP
+good practice and restrict this route to act on POST request only. 
+
