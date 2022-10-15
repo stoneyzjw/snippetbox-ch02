@@ -50,3 +50,10 @@ Making this change is important because - later in our application build request
 in a database is a non-idempotent action that changes the state of our server, so we should follow HTTP
 good practice and restrict this route to act on POST request only. 
 
+## The http.Error shortcut 
+
+If you want to send a non-200 status code and a plain-text response body (like we are in the code
+above) then it's a good opportunity to use the **http.Error()** shortcut. This is a lightweight helper
+function which take a given message and status code, then calls the **w.WriteHeader()** and
+**w.Write()** methods behind-the-scenes for us. 
+
