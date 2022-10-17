@@ -1,0 +1,6 @@
+[user]
+	name = zhengjingwei
+	email = zhengjingwei@aliyun.com
+[alias]
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	graph = log --all --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset'
